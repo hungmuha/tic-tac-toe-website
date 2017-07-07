@@ -28,27 +28,6 @@ var winners = [
 var t=1;
 var a=0; //initial move counts
 
-
-//everyclick switch
-
-$('.square').click(function(){
-	a++;
-	if(t===1) //t value determine if the move from player 1 or 2
-		{t=0;
-		 $(this).addClass('x');
-		}
-	else if(t===0)
-		{t=1;
-		 $(this).addClass('o');
-		}
-
-	
-	$checkWinner(); //function that determine which player is "the winner"
-	
-
-});
-
-
 //when player click box, box value added to player array
  $('#box1').click(function(){
 	if(t===1){
@@ -116,45 +95,19 @@ $('.square').click(function(){
 
 //winner function check
 
-// function checkWinner(){
-// 	for (var i=0 ;i<winners.length; i++)
-// 		{
-// 		if($player1.indexOf(winners[i][0]) > -1 
-// 			&& $player1.indexOf(winners[i][1]) > -1 
-// 			&& $player1.indexOf(winners[i][2]) > -1)
-// 			{
-// 			 console.log("player 1 won");
-// 			 break;
-// 			}
-// 		else if($player2.indexOf(winners[i][0]) > -1 
-// 			&& $player2.indexOf(winners[i][1]) > -1 
-// 			&& $player2.indexOf(winners[i][2]) > -1)
-// 			{
-// 			console.log("player 2 won");
-// 			break;
-// 			}
-// 		else if(a==9){
-// 			console.log("Draw!");
-// 			break;
-// 			}
-// 			console.log($player1.indexOf(winners[i][0])); 
-// 			console.log($player1.indexOf(winners[i][1]));
-// 			console.log ($player1.indexOf(winners[i][2]));
-// 		}};
-
-function $checkWinner(){
+function checkWinner(){
 	for (var i=0 ;i<winners.length; i++)
 		{
-		if($.inArray($player1,winners[i][0]) > -1 
-			&& $.inArray($player1,winners[i][1]) > -1 
-			&& $.inArray($player1,winners[i][2]) > -1)
+		if($player1.indexOf(winners[i][0]) > -1 
+			&& $player1.indexOf(winners[i][1]) > -1 
+			&& $player1.indexOf(winners[i][2]) > -1)
 			{
 			 console.log("player 1 won");
 			 break;
 			}
-		else if($.inArray($player2,winners[i][0]) > -1 
-			&& $.inArray($player2,winners[i][1]) > -1 
-			&& $.inArray($player2,winners[i][2]) > -1)
+		else if($player2.indexOf(winners[i][0]) > -1 
+			&& $player2.indexOf(winners[i][1]) > -1 
+			&& $player2.indexOf(winners[i][2]) > -1)
 			{
 			console.log("player 2 won");
 			break;
@@ -163,9 +116,57 @@ function $checkWinner(){
 			console.log("Draw!");
 			break;
 			}
-			console.log($.inArray($player1,winners[i][0])); 
-			console.log($.inArray($player1,winners[i][1]));
-			console.log($.inArray($player1,winners[i][2]));
+			// console.log($player1.indexOf(winners[i][0])); 
+			// console.log($player1.indexOf(winners[i][1]));
+			// console.log ($player1.indexOf(winners[i][2]));
 		}};
-		
+
+
+	//everyclick switch
+
+$('.square').click(function(){
+	a++;
+	if(t===1) //t value determine if the move from player 1 or 2
+		{
+		 $(this).addClass('x');
+		 t=0;
+		}
+	else if(t===0)
+		{
+		 $(this).addClass('o');
+		 t=1;
+		}
+		console.log($player1);
+	
+	checkWinner(); //function that determine which player is "the winner"
+	
+
+});
+
+// function $checkWinner(){
+// 	for (var i=0 ;i<winners.length; i++)
+// 		{
+// 		if($.inArray($player1,winners[i][0]) > -1 
+// 			&& $.inArray($player1,winners[i][1]) > -1 
+// 			&& $.inArray($player1,winners[i][2]) > -1)
+// 			{
+// 			 console.log("player 1 won");
+// 			 break;
+// 			}
+// 		else if($.inArray($player2,winners[i][0]) > -1 
+// 			&& $.inArray($player2,winners[i][1]) > -1 
+// 			&& $.inArray($player2,winners[i][2]) > -1)
+// 			{
+// 			console.log("player 2 won");
+// 			break;
+// 			}
+// 		else if(a==9){
+// 			console.log("Draw!");
+// 			break;
+// 			}
+// 			console.log($.inArray($player1,winners[i][0])); 
+// 			console.log($.inArray($player1,winners[i][1]));
+// 			console.log($.inArray($player1,winners[i][2]));
+// 		}};
+
 });
