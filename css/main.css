@@ -1,0 +1,26 @@
+*{
+	box-sizing: border-box;
+	text-align: center;
+}
+.container{
+	text-align:center;
+
+}
+td{
+	width:200px;
+	height:200px;
+	border: 1px solid black;
+}
+.gameBoard{
+	border: 1px solid black;
+}
+
+.x{
+	background: url('x.png');
+	background-size: 200px 200px;
+}
+
+.o{
+	background: url('o.png');
+	background-size: 200px 200px;
+}
