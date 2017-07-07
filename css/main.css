@@ -24,3 +24,6 @@ td{
 	background: url('o.png');
 	background-size: 200px 200px;
 }
+.avoidClick{
+	pointer-events: none;
+}

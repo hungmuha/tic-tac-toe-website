@@ -102,23 +102,20 @@ function checkWinner(){
 			&& $player1.indexOf(winners[i][1]) > -1 
 			&& $player1.indexOf(winners[i][2]) > -1)
 			{
-			 console.log("player 1 won");
+			 alert("player 1 won");
 			 break;
 			}
 		else if($player2.indexOf(winners[i][0]) > -1 
 			&& $player2.indexOf(winners[i][1]) > -1 
 			&& $player2.indexOf(winners[i][2]) > -1)
 			{
-			console.log("player 2 won");
+			alert("player 2 won");
 			break;
 			}
 		else if(a==9){
-			console.log("Draw!");
+			alert("Draw!");
 			break;
 			}
-			// console.log($player1.indexOf(winners[i][0])); 
-			// console.log($player1.indexOf(winners[i][1]));
-			// console.log ($player1.indexOf(winners[i][2]));
 		}};
 
 
@@ -129,11 +126,13 @@ $('.square').click(function(){
 	if(t===1) //t value determine if the move from player 1 or 2
 		{
 		 $(this).addClass('x');
+		 $(this).addClass('avoidClick');
 		 t=0;
 		}
 	else if(t===0)
 		{
 		 $(this).addClass('o');
+		 $(this).addClass('avoidClick');
 		 t=1;
 		}
 		console.log($player1);
